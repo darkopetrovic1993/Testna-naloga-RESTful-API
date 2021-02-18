@@ -27,12 +27,11 @@ public class RelationalDataAccessApplication implements CommandLineRunner {
     @Override
     public void run(String... strings){
 
-        log.info("Creating tables");
-
-        jdbcTemplate.execute("CREATE DATABASE baza_datumov;");
+/*        log.info("Creating tables");
+//        jdbcTemplate.execute("CREATE DATABASE baza_datumov;");
         jdbcTemplate.batchUpdate("CREATE TABLE tabela_datumov (" +
-                "created_on TIMESTAMP NOT NULL;");
+              "created_on TIMESTAMP NOT NULL;");
         jdbcTemplate.batchUpdate("INSERT INTO tabela_datumov (" +
-                "created_on new Datum(String.format(name));");
+              "created_on new Datum(String.format(name));");*/
     }
 }
