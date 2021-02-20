@@ -10,8 +10,20 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.jdbc.core.JdbcTemplate;
 
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+
 @SpringBootApplication
 public class RelationalDataAccessApplication implements CommandLineRunner {
+
+    // LocalDateTime.now()
+    // Mogoče: PostgreSQL JDBC connection string --->  jdbc:postgresql://localhost:5432/datum
+    // http://localhost:8080/postgres?datum=28-02-2021
+    @GetMapping("/postgres")
+    public Datum datum(@RequestParam(value = "datum") String name) {return new Datum(String.format(name));
+    }
 
     //Simple Logging Facade for Java (SLF4J)
     private static final Logger log = LoggerFactory.getLogger(RelationalDataAccessApplication.class);
@@ -27,6 +39,7 @@ public class RelationalDataAccessApplication implements CommandLineRunner {
     @Override
     public void run(String... strings){
 
+        // Vstavimo spremenljivko "Datum" v našo bazo podatkov
 /*        log.info("Creating tables");
 //        jdbcTemplate.execute("CREATE DATABASE baza_datumov;");
         jdbcTemplate.batchUpdate("CREATE TABLE tabela_datumov (" +
