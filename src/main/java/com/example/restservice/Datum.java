@@ -1,5 +1,8 @@
 package com.example.restservice;
 
+import javax.persistence.Entity;
+
+@Entity
 public class Datum {
     private final String datum;
 

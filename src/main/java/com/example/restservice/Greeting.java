@@ -1,7 +1,6 @@
 package com.example.restservice;
 
 public class Greeting {
-
     private final String content;
 
     public Greeting(String content) {
