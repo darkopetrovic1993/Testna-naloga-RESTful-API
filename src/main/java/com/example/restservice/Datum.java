@@ -8,7 +8,7 @@ public class Datum {
 
 //    Definiramo dve spremenljivke.
     private long id;
-    private String datum;
+    private String datum_spremenljivka;
 
 //
     public Datum() {
@@ -16,7 +16,7 @@ public class Datum {
 
 //    Constructor declaration of Class
     public Datum(String datum) {
-        this.datum = datum;
+        this.datum_spremenljivka = datum_spremenljivka;
     }
 
 //    Primary key. Zakaj ne stretegija GenerationType.SEQUENCE
@@ -29,14 +29,17 @@ public class Datum {
         this.id = id;
     }
 
-//    Method
+//    Getters and setters za spremenljivko datum
+    @Column(name = "datum", nullable = false)
+    public String getDatum_spremenljivka() {
+        return datum_spremenljivka;
+    }
+    public void setDatum_spremenljivka(String firstName) {
+        this.datum_spremenljivka = datum_spremenljivka;
+    }
+//    Metoda
     @Override
     public String toString() {
-        return "Datum [id=" + id + ", datum=" + datum + "]";
+        return "Datum [id=" + id + ", datum=" + datum_spremenljivka + "]";
     }
-//    Stara metoda
-//    public String getDatum() {
-//        return datum;
-//    }
-
 }
