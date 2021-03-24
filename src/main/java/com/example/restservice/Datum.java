@@ -15,7 +15,7 @@ public class Datum {
     }
 
 //    Constructor declaration of Class
-    public Datum(String datum) {
+    public Datum(String datum_spremenljivka) {
         this.datum_spremenljivka = datum_spremenljivka;
     }
 
@@ -34,9 +34,11 @@ public class Datum {
     public String getDatum_spremenljivka() {
         return datum_spremenljivka;
     }
-    public void setDatum_spremenljivka(String firstName) {
+
+    public void setDatum_spremenljivka(String datum_spremenljivka) {
         this.datum_spremenljivka = datum_spremenljivka;
     }
+
 //    Metoda
     @Override
     public String toString() {
