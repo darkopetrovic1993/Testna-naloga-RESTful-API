@@ -34,10 +34,11 @@ public class DatumControllerIntegrationTest {
     public void contextLoads() {
     }
 
+//    http://localhost:8080/some-dummy-url
     @Test
     public void testCreateDatum() {
         Datum datum = new Datum();
-        ResponseEntity<Datum> postResponse = restTemplate.postForEntity(getRootUrl() + "/datumi", datum, Datum.class);
+        ResponseEntity<Datum> postResponse = restTemplate.postForEntity(getRootUrl() + "/datum", datum, Datum.class);
         assertNotNull(postResponse);
         assertNotNull(postResponse.getBody());
     }
